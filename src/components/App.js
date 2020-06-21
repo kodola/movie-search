@@ -3,14 +3,16 @@ import Nav from "./Nav";
 import Search from "./Search";
 import Results from "./Results";
 import Pagination from "./Pagination";
+import MovieInfo from "./MovieInfo";
 
 const App = () => {
     const [movies, setMovie] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [totalRes, setTotalRes] = useState(0);
     const [currPage, setCurrPage] = useState(1);
+    const [chosenMovie, setChosenMovie] = useState(null);
 
-    const key = '1f6701f4695b66698a043fb831db39e9';
+    const key = "1f6701f4695b66698a043fb831db39e9";
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -38,13 +40,24 @@ const App = () => {
     };
     const pages = Math.floor(totalRes / 20);
 
+    const viewMovieInfo = (id) => {
+        const filteredMovie = movies.filter(movie => movie.id === id);
+        const newMovie = filteredMovie.length > 0 ? filteredMovie[0] : null;
+        setChosenMovie(newMovie);
+    };
+
+    const goBack = () => {
+        setChosenMovie(null);
+    };
 
   return (
     <div className="App">
       <Nav/>
+        {chosenMovie === null ? <>
       <Search handleSubmit={handleSubmit} handleChange={handleChange}/>
-      <Results movies={movies}/>
-        { totalRes > 20 ? <Pagination pages={pages} nextPage={nextPage} currPage={currPage}/> : '' }
+      <Results viewMovieInfo={viewMovieInfo} movies={movies}/>
+      </> : <MovieInfo goBack={goBack} chosenMovie={chosenMovie}/>}
+        { totalRes > 20 && chosenMovie === null ? <Pagination pages={pages} nextPage={nextPage} currPage={currPage}/> : '' }
     </div>
   );
 };

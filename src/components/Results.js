@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import Movie from "./Movie";
 
 const Results = (props) => {
@@ -9,7 +9,7 @@ const Results = (props) => {
                     props.movies.map((movie, i) => {
                         return (
                             <div key={i} className="col-4 my-2">
-                                <Movie key={i} movieId={movie.id} image={movie.poster_path} title={movie.title}/>
+                                <Movie key={i} viewMovieInfo={props.viewMovieInfo} movieId={movie.id} image={movie.poster_path} title={movie.title}/>
                             </div>
                         )
                     })
