@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import Nav from "./Nav";
 import Search from "./Search";
+import Results from "./Results";
+
 
 const App = () => {
     const [movies, setMovie] = useState([]);
@@ -14,17 +16,19 @@ const App = () => {
             .then(data => data.json())
             .then(data => {
                 console.log(data);
-                setMovie([...data.results])
+                setMovie([...data.results]);
             })
     };
     const handleChange = (e) => {
         setSearchTerm(e.target.value);
     };
 
+
   return (
     <div className="App">
       <Nav/>
       <Search handleSubmit={handleSubmit} handleChange={handleChange}/>
+      <Results  movies={movies}/>
     </div>
   );
 };
