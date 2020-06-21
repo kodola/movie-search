@@ -11,7 +11,7 @@ const Movie = (props) => {
                     }
                     <div className="card-body">
                         <h5 className="card-title">{props.title}</h5>
-                        <a href="#" className="btn btn-primary" onClick={() => props.viewMovieInfo(props.movieId)}>Show Details</a>
+                        <button className="btn btn-primary" onClick={() => props.viewMovieInfo(props.movieId)}>Show Details</button>
                     </div>
                 </div>
             </div>

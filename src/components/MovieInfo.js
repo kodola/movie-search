@@ -17,6 +17,7 @@ const MovieInfo = (props) => {
         if (props.chosenMovie.genre_ids.includes(gen.id)) {
             movieGenres.push(gen.name);
         }
+        return movieGenres;
     });
         /*console.log(props.chosenMovie.genre_ids);
         console.log(genre);
