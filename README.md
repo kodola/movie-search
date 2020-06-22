@@ -1,4 +1,18 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Movie-search
+This project was created using[Create React App](https://github.com/facebook/create-react-app) and the Bootstrap library (https://getbootstrap.com/).
+
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Available Scripts](#available-scripts)
+* [Contact](#contact)
+
+## General info
+The application is used to search movies by titles. Details about the movies can be seen by clicking the specific tile button, and through the drop-down hints from the Dropdown button. The website has pagination. The rating of each film using stars was implemented thanks to react-star-rating-component. Website styling was adopted from the Bootstrap library.
+
+## Technologies
+* ES6
+* React 16.11.0
 
 ## Available Scripts
 
@@ -37,32 +51,5 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Contact
+Created by kodola
