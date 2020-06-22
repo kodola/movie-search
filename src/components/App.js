@@ -40,7 +40,6 @@ const App = () => {
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${searchTerm}&page=${pageNo}`)
             .then(data => data.json())
             .then(data => {
-                console.log(data);
                 setMovie([...data.results]);
                 setCurrPage(pageNo);
             })
