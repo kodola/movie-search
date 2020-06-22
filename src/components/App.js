@@ -14,12 +14,11 @@ const App = () => {
 
     const key = "1f6701f4695b66698a043fb831db39e9";
 
-
     const getInfo = () => {
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${searchTerm}`)
             .then(data => data.json())
             .then(data => {
-                console.log(data);
+                //console.log(data);
                 setMovie([...data.results]);
                 setTotalRes(data.total_results);
             })

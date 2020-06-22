@@ -1,8 +1,8 @@
 import React from "react";
 import StarRatingComponent from 'react-star-rating-component';
 
-
 const Rating = (props) => {
+
         return (
                 <StarRatingComponent
                     name="rate2"
