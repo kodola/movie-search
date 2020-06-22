@@ -19,11 +19,6 @@ const MovieInfo = (props) => {
         }
         return movieGenres;
     });
-        /*console.log(props.chosenMovie.genre_ids);
-        console.log(genre);
-        console.log(movieGenres);
-
-    console.log(props.chosenMovie);*/
     return(
         <div className="container">
             <div className="row" onClick={props.goBack} style={{cursor: "pointer", paddingTop: 50}}>
@@ -42,6 +37,7 @@ const MovieInfo = (props) => {
                             <h5 className="card-title">{props.chosenMovie.title}</h5>
                             <p className="card-text">Summary:<br/>{props.chosenMovie.overview}</p>
                             <p className="card-text">Genre: {movieGenres.join(', ')}</p>
+                            <p className="card-text">Rating: {props.chosenMovie.vote_average}</p>
                         </div>
                     </div>
                 </div>

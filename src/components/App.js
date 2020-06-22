@@ -14,8 +14,8 @@ const App = () => {
 
     const key = "1f6701f4695b66698a043fb831db39e9";
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+
+    const getInfo = () => {
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${searchTerm}`)
             .then(data => data.json())
             .then(data => {
@@ -24,8 +24,16 @@ const App = () => {
                 setTotalRes(data.total_results);
             })
     };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        getInfo();
+    };
     const handleChange = (e) => {
         setSearchTerm(e.target.value);
+        if (searchTerm && searchTerm.length > 1) {
+            getInfo();
+        }
     };
 
     //pagination
@@ -54,7 +62,7 @@ const App = () => {
     <div className="App">
       <Nav/>
         {chosenMovie === null ? <>
-      <Search handleSubmit={handleSubmit} handleChange={handleChange}/>
+      <Search handleSubmit={handleSubmit} handleChange={handleChange} searchTerm={searchTerm} movies={movies} viewMovieInfo={viewMovieInfo}/>
       <Results viewMovieInfo={viewMovieInfo} movies={movies}/>
       </> : <MovieInfo goBack={goBack} chosenMovie={chosenMovie}/>}
         { totalRes > 20 && chosenMovie === null ? <Pagination pages={pages} nextPage={nextPage} currPage={currPage}/> : '' }
